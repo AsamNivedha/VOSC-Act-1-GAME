@@ -1,11 +1,17 @@
-[README.md](https://github.com/user-attachments/files/32858653/README.md)
+[README-20.md](https://github.com/user-attachments/files/32858945/README-20.md)
 # NEBULA — Space Defender
 
 A neon arcade shooter that runs in the browser. Pilot your ship, blast waves of enemies, grab power-ups, and chase a high score. Built with plain HTML, CSS and JavaScript, with no libraries and no build step.
 
-## Play
+## Live demo
 
-Open `index.html` in any modern browser, or host the three files (see below).
+**Play it here: https://nebulashooter.netlify.app/**
+
+It works on desktop and on phones.
+
+## Play locally
+
+Open `index.html` in any modern browser.
 
 ## Controls
 
@@ -60,7 +66,7 @@ Keep all three in the same folder. The file names must stay exactly as shown.
 3. Go to **Settings → Pages**, pick your main branch, and save.
 4. Your game goes live at `https://<username>.github.io/<repository>/`.
 
-**Netlify Live Link:**<https://nebulashooter.netlify.app/> click to test instantly.
+**Netlify Drop:** drag the folder onto <https://app.netlify.com/drop> to get an instant link.
 
 ## Tweaking the game
 

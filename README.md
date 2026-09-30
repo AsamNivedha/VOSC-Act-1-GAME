@@ -60,7 +60,7 @@ Keep all three in the same folder. The file names must stay exactly as shown.
 3. Go to **Settings → Pages**, pick your main branch, and save.
 4. Your game goes live at `https://<username>.github.io/<repository>/`.
 
-**Netlify Drop:** drag the folder onto <https://app.netlify.com/drop> to get an instant link.
+**Netlify Live Link:**<https://nebulashooter.netlify.app/> click to test instantly.
 
 ## Tweaking the game
 

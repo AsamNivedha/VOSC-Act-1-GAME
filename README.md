@@ -1,4 +1,3 @@
-[README-20.md](https://github.com/user-attachments/files/32858945/README-20.md)
 # NEBULA — Space Defender
 
 A neon arcade shooter that runs in the browser. Pilot your ship, blast waves of enemies, grab power-ups, and chase a high score. Built with plain HTML, CSS and JavaScript, with no libraries and no build step.

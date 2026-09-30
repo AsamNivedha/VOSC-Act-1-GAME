@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#02030a">
+  <title>NEBULA — Space Defender</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="cabinet">
+    <div id="game-wrap">
+
+      <!-- The game world is drawn here (800 x 600 logical pixels) -->
+      <canvas id="game" width="800" height="600" aria-label="Nebula Space Defender game area"></canvas>
+
+      <!-- In-game HUD -->
+      <div id="hud" class="hidden">
+        <div class="hud-block hud-left">
+          <div class="hud-label">Score</div>
+          <div id="score" class="hud-value">000000</div>
+          <div class="hud-sub">Best <span id="high-score">000000</span></div>
+          <div id="combo" class="combo hidden">×2 combo</div>
+        </div>
+
+        <div class="hud-block hud-center">
+          <div class="hud-label">Wave</div>
+          <div id="wave" class="hud-value">1</div>
+          <div class="wave-track"><div id="wave-progress"></div></div>
+        </div>
+
+        <div class="hud-block hud-right">
+          <div class="hud-label">Hull</div>
+          <div id="lives" class="lives"></div>
+        </div>
+      </div>
+
+      <!-- Active power-up timers (shown under the hull icons) -->
+      <div id="powerups" class="hidden">
+        <div class="chip" id="chip-shield" style="--c: var(--cyan)">
+          <span>Shield</span>
+          <span class="bar"><span id="bar-shield"></span></span>
+        </div>
+        <div class="chip" id="chip-rapid" style="--c: var(--amber)">
+          <span>Rapid fire</span>
+          <span class="bar"><span id="bar-rapid"></span></span>
+        </div>
+        <div class="chip" id="chip-spread" style="--c: var(--magenta)">
+          <span>Tri-shot</span>
+          <span class="bar"><span id="bar-spread"></span></span>
+        </div>
+      </div>
+
+      <!-- "WAVE 3" / "WAVE CLEARED" banner -->
+      <div id="wave-banner">
+        <div id="banner-title"></div>
+        <div id="banner-sub"></div>
+      </div>
+
+      <button id="mute-btn" class="mute" type="button" aria-pressed="false">Sound on</button>
+
+      <!-- Start screen -->
+      <section id="start-screen" class="screen visible" aria-label="Start screen">
+        <h1 class="title" data-text="NEBULA">NEBULA</h1>
+        <p class="subtitle">Space Defender</p>
+
+        <button id="start-btn" class="btn primary" type="button">Start game</button>
+        <p class="best-line">Best score <strong id="start-best">000000</strong></p>
+
+        <div class="howto">
+          <p class="rule">Stop every enemy before it reaches the bottom. You have 3 lives.</p>
+          <div class="keys">
+            <span><kbd>←</kbd><kbd>→</kbd> or <kbd>A</kbd><kbd>D</kbd> move</span>
+            <span><kbd>Space</kbd> shoot</span>
+            <span><kbd>P</kbd> pause</span>
+            <span><kbd>M</kbd> sound</span>
+          </div>
+          <ul class="legend">
+            <li style="--c: var(--cyan)"><i></i>Shield blocks hits</li>
+            <li style="--c: var(--amber)"><i></i>Rapid fire</li>
+            <li style="--c: var(--magenta)"><i></i>Tri-shot</li>
+            <li style="--c: var(--lime)"><i></i>Extra hull</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Pause screen -->
+      <section id="pause-screen" class="screen" aria-label="Paused">
+        <h2 class="over-title">Paused</h2>
+        <div class="btn-row">
+          <button id="resume-btn" class="btn primary" type="button">Resume</button>
+          <button id="pause-restart-btn" class="btn ghost" type="button">Restart</button>
+        </div>
+        <p class="note">Press <kbd>P</kbd> to resume</p>
+      </section>
+
+      <!-- Game-over screen -->
+      <section id="gameover-screen" class="screen" aria-label="Game over">
+        <h2 class="over-title">Game over</h2>
+        <p id="new-record" class="record">New high score!</p>
+        <dl class="stats">
+          <div><dt>Score</dt><dd id="final-score">000000</dd></div>
+          <div><dt>Best</dt><dd id="final-best">000000</dd></div>
+          <div><dt>Wave reached</dt><dd id="final-wave">1</dd></div>
+          <div><dt>Enemies destroyed</dt><dd id="final-kills">0</dd></div>
+          <div><dt>Time survived</dt><dd id="final-time">0:00</dd></div>
+        </dl>
+        <div class="btn-row">
+          <button id="restart-btn" class="btn primary" type="button">Play again</button>
+          <button id="menu-btn" class="btn ghost" type="button">Main menu</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <noscript>NEBULA needs JavaScript enabled to run.</noscript>
+  <script src="script.js"></script>
+</body>
+</html>
